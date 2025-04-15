@@ -23,4 +23,9 @@ const serviceSchema = new Schema(
   { timestamps: true }
 );
 
-const Serice = mongoose.model("Service", serviceSchema);
+const Service = mongoose.model("Service", serviceSchema);
+
+module.exports = {
+  Service,
+  serviceSchema,
+};
