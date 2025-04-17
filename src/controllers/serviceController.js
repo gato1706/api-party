@@ -48,6 +48,24 @@ const serviceController = {
       res.status(500).json({ msg: "Erro interno no servidor." });
     }
   },
+
+  delete: async (req, res) => {
+    try {
+      const id = req.params.id;
+
+      const service = await ServiceModel.findById(id);
+
+      if (!service) {
+        return res.status(404).json({ msg: "Serviço não encontrado!" });
+      }
+
+      const deletedService = await ServiceModel.findByIdAndDelete(id);
+
+      res.status(200).json({ msg: "Serviço deletado com sucesso" });
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 module.exports = serviceController;
