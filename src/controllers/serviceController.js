@@ -1,5 +1,5 @@
 const { Service: ServiceModel } = require("../models/Service");
-const { put } = require("../routes/services");
+const mongoose = require("mongoose");
 
 const serviceController = {
   create: async (req, res) => {
@@ -30,9 +30,8 @@ const serviceController = {
 
   get: async (req, res) => {
     try {
-      const id = req.params.id;
+      const { id } = req.params;
 
-      // VALIDAÇÃO: impede o erro antes que ele ocorra
       if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).json({ msg: "ID inválido!" });
       }
@@ -43,10 +42,10 @@ const serviceController = {
         return res.status(404).json({ msg: "Serviço não encontrado!" });
       }
 
-      res.json(service);
+      return res.json(service);
     } catch (error) {
-      console.log(error);
-      res.status(500).json({ msg: "Erro interno no servidor." });
+      console.error("Erro no GET /services/:id:", error.message);
+      return res.status(500).json({ msg: "Erro interno no servidor." });
     }
   },
 
@@ -84,7 +83,9 @@ const serviceController = {
         return res.status(404).json({ msg: "Serviço não encontrado!" });
       }
 
-      return res.status(200).json({service, msg: "Serviço atualizado com sucesso!" });
+      return res
+        .status(200)
+        .json({ service, msg: "Serviço atualizado com sucesso!" });
     } catch (error) {
       console.log(error);
     }

@@ -21,7 +21,7 @@ const partySchema = new Schema(
       required: true,
     },
     budget: {
-      type: Numer,
+      type: Number,
       required: true,
     },
 
