@@ -26,6 +26,28 @@ const serviceController = {
       console.log(error);
     }
   },
+
+  get: async (req, res) => {
+    try {
+      const id = req.params.id;
+
+      // VALIDAÇÃO: impede o erro antes que ele ocorra
+      if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({ msg: "ID inválido!" });
+      }
+
+      const service = await ServiceModel.findById(id);
+
+      if (!service) {
+        return res.status(404).json({ msg: "Serviço não encontrado!" });
+      }
+
+      res.json(service);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ msg: "Erro interno no servidor." });
+    }
+  },
 };
 
 module.exports = serviceController;
