@@ -13,8 +13,7 @@ Este projeto é uma **API RESTful** desenvolvida com **JavaScript**, utilizando 
 - **Express**
 - **MongoDB Atlas**
 - **Mongoose**
-
-Aprendi na prática como conectar uma aplicação Node.js a um banco de dados na nuvem, criar rotas de uma API REST e aplicar os conceitos fundamentais de CRUD com o MongoDB usando Mongoose.
+- **Thunder Client** (extensão do VSCode para testar requisições)
 
 ---
 
@@ -55,12 +54,20 @@ Este projeto foi essencial para reforçar os seguintes conceitos:
 - Como funciona uma API por trás dos panos;
 - Como estruturar um projeto Node.js com Express;
 - Como modelar dados com Mongoose e interagir com o MongoDB Atlas;
-- Como testar endpoints e validar respostas;
+- Como testar endpoints e validar respostas com ferramentas como **Thunder Client**;
 - A importância de separar responsabilidades e seguir uma arquitetura organizada.
 
 ---
 
 ## 🛠️ Como rodar o projeto
+
+### Pré-requisitos
+
+- Node.js instalado
+- Conta no [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- Extensão **Thunder Client** (opcional, mas recomendado para testar os endpoints direto pelo VSCode)
+
+### Passos para rodar:
 
 1. Clone o repositório:
 ```bash
