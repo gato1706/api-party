@@ -59,16 +59,3 @@ Este projeto foi essencial para reforçar os seguintes conceitos:
 
 ---
 
-## 🛠️ Como rodar o projeto
-
-### Pré-requisitos
-
-- Node.js instalado
-- Conta no [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-- Extensão **Thunder Client** (opcional, mas recomendado para testar os endpoints direto pelo VSCode)
-
-### Passos para rodar:
-
-1. Clone o repositório:
-```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
